@@ -1,0 +1,14 @@
+"*":
+  "exception-reporting":
+    userId: "34c61715-b78b-e613-40a8-f77c5111bf64"
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "atom-dark-ui"
+      "seti-monokai"
+    ]
+  editor:
+    invisibles: {}
+    fontSize: 16
+    fontFamily: "Source Code Pro"
