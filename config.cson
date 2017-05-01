@@ -1,14 +1,51 @@
 "*":
-  "exception-reporting":
-    userId: "34c61715-b78b-e613-40a8-f77c5111bf64"
-  welcome:
-    showOnStartup: false
+  "atom-package-deps":
+    ignored: []
   core:
+    allowPendingPaneItems: false
+    disabledPackages: [
+      "remote-edit"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "**/node_modules/*"
+      "**/.meteor/*"
+    ]
+    telemetryConsent: "no"
     themes: [
       "atom-dark-ui"
-      "seti-monokai"
+      "monokai"
     ]
   editor:
-    invisibles: {}
-    fontSize: 16
     fontFamily: "Source Code Pro"
+    fontSize: 15
+    invisibles: {}
+    preferredLineLength: 100
+    showIndentGuide: true
+  "exception-reporting":
+    preferredLineLength: 100
+    userId: "34c61715-b78b-e613-40a8-f77c5111bf64"
+  linter: {}
+  "linter-eslint":
+    fixOnSave: true
+    globalNodePath: "/Users/vincent/.nvm/versions/node/v4.4.7"
+  "linter-jshint":
+    disableWhenNoJshintrcFileInPath: true
+  "linter-ui-default": {}
+  "markdown-preview":
+    breakOnSingleNewline: true
+  "platformio-ide-terminal":
+    core:
+      autoRunCommand: "export PATH=/Users/vincent/.atom/packages/platformio-ide/penv/bin:/Users/vincent/.rvm/gems/ruby-2.3.0/bin:/Users/vincent/.rvm/gems/ruby-2.3.0@global/bin:/Users/vincent/.rvm/rubies/ruby-2.3.0/bin:/Users/vincent/.nvm/versions/node/v4.4.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/vincent/.rvm/gems/ruby-1.9.3-p550/bin:/Users/vincent/.rvm/gems/ruby-1.9.3-p550@global/bin:/Users/vincent/.rvm/rubies/ruby-1.9.3-p550/bin:/Users/vincent/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+  "tool-bar":
+    position: "Left"
+  "webbox-color":
+    fillColorAsBackground: false
+  welcome:
+    showOnStartup: false

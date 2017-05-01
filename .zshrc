@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/vincentwilson/.oh-my-zsh
+export ZSH=/Users/vincent/.oh-my-zsh
 
+# Alias git -> hub
+eval "$(hub alias -s)"
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -45,11 +47,11 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(rails git ruby)
+plugins=(rails git ruby wd)
 
 # User configuration
 
-export PATH="$PATH:/Users/vincentwilson/.rvm/gems/ruby-1.9.3-p550/bin:/Users/vincentwilson/.rvm/gems/ruby-1.9.3-p550@global/bin:/Users/vincentwilson/.rvm/rubies/ruby-1.9.3-p550/bin:/Users/vincentwilson/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$PATH:/Users/vincent/.rvm/gems/ruby-1.9.3-p550/bin:/Users/vincent/.rvm/gems/ruby-1.9.3-p550@global/bin:/Users/vincent/.rvm/rubies/ruby-1.9.3-p550/bin:/Users/vincent/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -70,6 +72,10 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+bindkey -e
+bindkey '^[[1;9C' forward-word
+bindkey '^[[1;9D' backward-word
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -79,12 +85,24 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gs="git status"
+alias code="atom"
 alias ebthme="cd ~/ebth/ebth-com"
 alias gd="git diff"
 alias whathaveidone="git diff"
-alias whatamidoing="git for-each-ref --sort=-committerdate refs/heads/"
+alias whatamidoing="git for-each-ref --sort=-committerdate refs/heads/ | head"
 alias be="bundle exec"
-alias burt="(ebthme;be rails c)"
-alias macklin="(ebthme;be rails s)"
-alias guardme="(ebthme;be guard)"
-alias letswork="ebthme;atom ."
+alias burt="(be rails c)"
+alias macklin="(be rails s)"
+alias guardme="(be guard)"
+alias letswork="atom ."
+alias pihole="networksetup -setdnsservers Wi-Fi 192.168.51.73 && sudo killall -HUP mDNSResponder"
+alias mydns="networksetup -setdnsservers Wi-Fi 8.8.8.8 && sudo killall -HUP mDNSResponder"
+export NVM_DIR="/Users/vincent/.nvm"
+alias notify="osascript -e 'display notification \"Tests done\"'"
+alias screenshot="/Users/vincent/personal-projects/vincenzo-dotfiles/screenshot.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export ANDROID_HOME=${HOME}/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
