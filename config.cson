@@ -5,6 +5,7 @@
     allowPendingPaneItems: false
     disabledPackages: [
       "remote-edit"
+      "webbox-color"
     ]
     ignoredNames: [
       ".git"
@@ -20,10 +21,10 @@
     telemetryConsent: "no"
     themes: [
       "atom-dark-ui"
-      "monokai"
+      "atom-sublime-monokai-syntax"
     ]
   editor:
-    fontFamily: "Source Code Pro"
+    fontFamily: "Hasklig"
     fontSize: 15
     invisibles: {}
     preferredLineLength: 100
@@ -31,13 +32,17 @@
   "exception-reporting":
     preferredLineLength: 100
     userId: "34c61715-b78b-e613-40a8-f77c5111bf64"
-  linter: {}
+  linter:
+    disabledProviders: [
+      "Atom Npm Outdated"
+    ]
   "linter-eslint":
     fixOnSave: true
-    globalNodePath: "/Users/vincent/.nvm/versions/node/v4.4.7"
+    globalNodePath: "/Users/vincent/.nvm/versions/node/v8.4.0"
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
-  "linter-ui-default": {}
+  "linter-ui-default":
+    showPanel: true
   "markdown-preview":
     breakOnSingleNewline: true
   "platformio-ide-terminal":

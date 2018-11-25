@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/vincent/.oh-my-zsh
-
 # Alias git -> hub
 eval "$(hub alias -s)"
 # Set name of the theme to load.
@@ -51,7 +50,7 @@ plugins=(rails git ruby wd)
 
 # User configuration
 
-export PATH="$PATH:/Users/vincent/.rvm/gems/ruby-1.9.3-p550/bin:/Users/vincent/.rvm/gems/ruby-1.9.3-p550@global/bin:/Users/vincent/.rvm/rubies/ruby-1.9.3-p550/bin:/Users/vincent/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$PATH:/Users/vincent/.rvm/gems/ruby-1.9.3-p550/bin:/Users/vincent/.rvm/gems/ruby-1.9.3-p550@global/bin:/Users/vincent/.rvm/rubies/ruby-1.9.3-p550/bin:/Users/vincent/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/vincent/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -85,7 +84,7 @@ bindkey '^[[1;9D' backward-word
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gs="git status"
-alias code="atom"
+alias code="subl"
 alias ebthme="cd ~/ebth/ebth-com"
 alias gd="git diff"
 alias whathaveidone="git diff"
@@ -100,9 +99,28 @@ alias mydns="networksetup -setdnsservers Wi-Fi 8.8.8.8 && sudo killall -HUP mDNS
 export NVM_DIR="/Users/vincent/.nvm"
 alias notify="osascript -e 'display notification \"Tests done\"'"
 alias screenshot="/Users/vincent/personal-projects/vincenzo-dotfiles/screenshot.sh"
+alias start-crossroads="/Users/vincent/personal-projects/vincenzo-dotfiles/start-crossroads.sh"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export ANDROID_HOME=${HOME}/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="/usr/local/sbin:$PATH"
+export EDITOR='subl -w'
+export REACT_DEBUGGER="open -g 'rndebugger://set-debugger-loc?port=8081' ||"
+export SPOTIPY_CLIENT_ID='f7f6df9a5faf4f8e814d2c89646d7665'
+export SPOTIPY_CLIENT_SECRET='3c856bc849a04f9dba25504e8ae2606b'
+export SPOTIPY_REDIRECT_URI='http://myfaceis.sexy/'
+export YOUTUBE_DEV_KEY='AIzaSyDdJbMLU1s9b12ykYESxYOarrHLRzwQMjc'
+export PATH=$PATH:$(go env GOPATH)/bin
+export GOPATH=$(go env GOPATH)
+export GOPATH=$HOME/personal-projects/go
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/vincent/.nvm/versions/node/v8.5.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/vincent/.nvm/versions/node/v8.5.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/vincent/.nvm/versions/node/v8.5.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/vincent/.nvm/versions/node/v8.5.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
