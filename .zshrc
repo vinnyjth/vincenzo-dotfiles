@@ -1,7 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/vincent/.oh-my-zsh
+
 # Alias git -> hub
-eval "$(hub alias -s)"
+# eval "$(hub alias -s)"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -96,26 +98,35 @@ alias guardme="(be guard)"
 alias letswork="atom ."
 alias pihole="networksetup -setdnsservers Wi-Fi 192.168.51.73 && sudo killall -HUP mDNSResponder"
 alias mydns="networksetup -setdnsservers Wi-Fi 8.8.8.8 && sudo killall -HUP mDNSResponder"
-export NVM_DIR="/Users/vincent/.nvm"
 alias notify="osascript -e 'display notification \"Tests done\"'"
 alias screenshot="/Users/vincent/personal-projects/vincenzo-dotfiles/screenshot.sh"
 alias start-crossroads="/Users/vincent/personal-projects/vincenzo-dotfiles/start-crossroads.sh"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export ANDROID_HOME=${HOME}/Library/Android/sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+
+# Fior android development
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="/usr/local/sbin:$PATH"
+export PATH="$PATH:$HOME/.cargo/bin"
 export EDITOR='subl -w'
 export REACT_DEBUGGER="open -g 'rndebugger://set-debugger-loc?port=8081' ||"
 export SPOTIPY_CLIENT_ID='f7f6df9a5faf4f8e814d2c89646d7665'
 export SPOTIPY_CLIENT_SECRET='3c856bc849a04f9dba25504e8ae2606b'
 export SPOTIPY_REDIRECT_URI='http://myfaceis.sexy/'
 export YOUTUBE_DEV_KEY='AIzaSyDdJbMLU1s9b12ykYESxYOarrHLRzwQMjc'
-export PATH=$PATH:$(go env GOPATH)/bin
-export GOPATH=$(go env GOPATH)
-export GOPATH=$HOME/personal-projects/go
+
+# Go stuff...
+# export PATH=$PATH:$(go env GOPATH)/bin
+# export GOPATH=$(go env GOPATH)
+# export GOPATH=$HOME/personal-projects/go
+
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ -f /Users/vincent/.nvm/versions/node/v8.5.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/vincent/.nvm/versions/node/v8.5.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
@@ -124,3 +135,10 @@ export GOPATH=$HOME/personal-projects/go
 [[ -f /Users/vincent/.nvm/versions/node/v8.5.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/vincent/.nvm/versions/node/v8.5.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+
+# Added by Amplify CLI binary installer
+export PATH="$HOME/.amplify/bin:$PATH"
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
